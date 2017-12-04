@@ -48,11 +48,14 @@ kronos_cli delete http://localhost:8080 1
 
 ## Future enhancements
 
+### More expressive docker commands
+As is, the scheduler simply runs the container without any extra input. It'd be useful to be able to pass in the full set of `docker run ...` command set, allowing users to set environment variables or anything else they'd want.
+
 ### Error handling
 Right now there's a good chance you'll break things if you enter a bad command in the CLI or if the API runs a bad image. I'd want to add some checks around deleting jobs on the API. The CLI could use some improvements for checking the arguments before trying to run them.
 
 ### CLI help
-There's a small bit of boilerplate in the CLI to helpu users know how to use the CLI, but it could use a lot more. I'd like to flesh out help for args for the commands to help guide the user. I'd want to also add the ability to save a host, so you don't have to type in the IP for each command. It'd also be cool to add some auto-completion for commands. 
+There's a small bit of boilerplate in the CLI to help users know how to use the CLI, but it could use a lot more. I'd like to flesh out help for args for the commands to help guide the user. I'd want to also add the ability to save a host, so you don't have to type in the IP for each command. It'd also be cool to add some auto-completion for commands. 
 
 ### Frequency help
 Most people are familiar with schdeuling cron jobs, but it'd be great to add some verification or help within the CLI. Even something as sample as a few example inputs. Right now it just takes a string and passes it along to the API, which isn't great.
